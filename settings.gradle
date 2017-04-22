@@ -1,0 +1,4 @@
+include ':app', ':library'
+
+project (':library').projectDir = new File('/Users/User/AndroidStudioProjects/MtechLibrary/library')
+

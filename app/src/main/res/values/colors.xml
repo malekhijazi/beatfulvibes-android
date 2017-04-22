@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#25272f</color>
+    <color name="colorPrimaryDark">#111114</color>
+    <color name="colorAccent">#02b875</color>
+    <color name="background">#1c1e23</color>
+    <color name="secondary_text">#727272</color>
+    <color name="track_footer">#2e343e</color>
+    <color name="artist_track_bg">#992e343e</color>
+
+    <color name="category_unselected_border">#3dffffff</color>
+
+</resources>

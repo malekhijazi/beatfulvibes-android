@@ -1,0 +1,34 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
+    package="mobi.mtech.beatfulvibes">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.SplashActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.HelpActivity" />
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.SettingsActivity" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="4d5a9b9e5e2698e24bb004c4083a2bab24cc2c41" />
+    </application>
+
+</manifest>
