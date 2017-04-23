@@ -165,7 +165,7 @@ public class MainActivity extends CoreTabbedFrameActivity implements View.OnClic
         final View searchView = findViewById(R.id.search_card);
         final View searchBtn = findViewById(R.id.mi_search);
         // get the center for the clipping circle
-        int cx = ((searchBtn.getLeft() + searchBtn.getRight())) / 2;
+        int cx = ((searchBtn.getLeft() + searchBtn.getRight()) * 3) / 2;
         int cy = (searchBtn.getTop() + searchBtn.getBottom()) / 2;
 
         // get the final radius for the clipping circle
@@ -259,11 +259,17 @@ public class MainActivity extends CoreTabbedFrameActivity implements View.OnClic
 
     @Override
     public void onBackPressed() {
-        if (isSearchOpened) {
-            hideSearchBar();
-        }
         if (mHomeFragment != null && HomeFragment.mTrackFragment != null && !mHomeFragment.isTrackFragmentMinimized()) {
             mHomeFragment.minimizeTrackFragment();
+            return;
+        }
+        if (isSearchOpened ) {
+            if(fm.getBackStackEntryCount() > 1){
+                super.onBackPressed();
+            }else {
+                hideSearchBar();
+                super.onBackPressed();
+            }
             return;
         }
         if (fm.getBackStackEntryCount() > 0) {

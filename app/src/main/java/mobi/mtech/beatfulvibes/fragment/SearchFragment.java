@@ -15,6 +15,7 @@ import com.mtech.library.adapter.CoreListAdapter;
 import com.mtech.library.fragment.CoreListFragment;
 import com.mtech.library.listener.ItemClickListener;
 import com.mtech.library.manager.CoreNetworkManager;
+import com.mtech.library.util.Utils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -171,6 +172,7 @@ public class SearchFragment extends CoreListFragment<Track> {
             NetworkManager.search(mContext, params, new CoreNetworkManager.Listener<SearchDataWrapper>() {
                 @Override
                 public void onSuccess(SearchDataWrapper response) {
+                    Utils.closeKeyboard(getActivity());
                     if (page == 1) {
                         getAdapter().updateItems(new ArrayList<>(Arrays.asList(response.getTracks())));
                         mArtistAdapter.updateItems(new ArrayList<>(Arrays.asList(response.getArtists())));

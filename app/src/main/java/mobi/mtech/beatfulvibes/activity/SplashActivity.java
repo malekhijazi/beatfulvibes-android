@@ -22,13 +22,13 @@ public class SplashActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Fabric.with(this, new Crashlytics());
-        if (CoreCacheManager.getInstance(getApplicationContext()).getBoolean(Constant.HELP_FINISHED)) {
+//        if (CoreCacheManager.getInstance(getApplicationContext()).getBoolean(Constant.HELP_FINISHED)) {
             startActivity(new Intent(this, MainActivity.class));
             this.finish();
-        } else {
-            startActivity(new Intent(this, HelpActivity.class));
-            finish();
-        }
+//        } else {
+//            startActivity(new Intent(this, HelpActivity.class));
+//            finish();
+//        }
 
     }
 }

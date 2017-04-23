@@ -110,7 +110,7 @@ public class TrackFragment extends CoreListFragment<Track> implements YouTubePla
     }
 
     private void getSimilar() {
-
+        getAdapter().reset();
         try {
             showLoader();
             JSONObject params = new JSONObject();
@@ -139,7 +139,7 @@ public class TrackFragment extends CoreListFragment<Track> implements YouTubePla
      */
     @Override
     public CoreListAdapter<Track> initAdapter() {
-        return new TrackAdapter(mContext, rvList, new ArrayList<Track>());
+        return new TrackAdapter(mContext, rvList, new ArrayList<Track>(), false);
     }
 
     /**

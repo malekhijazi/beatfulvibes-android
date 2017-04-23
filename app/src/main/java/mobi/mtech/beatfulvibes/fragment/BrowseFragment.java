@@ -144,19 +144,23 @@ public class BrowseFragment extends CoreListFragment<Track> {
                 public void onSuccess(BrowseDataWrapper response) {
                     if (response.getTracks().length < 20) {
                         getAdapter().hideFooterLoader();
+                    }else{
+                        getAdapter().showFooterLoader();
                     }
                     if (page > 1) {
                         getAdapter().addItems(new ArrayList<>(Arrays.asList(response.getTracks())));
                     } else {
                         setupCategories(response.getCategories());
                         getAdapter().updateItems(new ArrayList<>(Arrays.asList(response.getTracks())));
-                        mCategoriesRecyclerView.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                mCategoryAdapter.getItemClickListener().itemClicked(mCategoriesRecyclerView.getChildAt(0), 0);
+                        if(category_id == 0) {
+                            mCategoriesRecyclerView.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    mCategoryAdapter.getItemClickListener().itemClicked(mCategoriesRecyclerView.getChildAt(0), 0);
 
-                            }
-                        }, 100);
+                                }
+                            }, 100);
+                        }
                     }
                     hideLoader();
                 }

@@ -6,7 +6,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.mtech.library.activity.CoreListActivity;
@@ -35,7 +34,7 @@ public class SettingsActivity extends CoreListActivity<Setting> {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        rvList.addItemDecoration(new SimpleDividerItemDecoration(getResources()));
+        rvList.addItemDecoration(new SimpleDividerItemDecoration(getResources(),1, R.drawable.settings_divider));
         setBackButtonEnabled(getToolbar());
         setTitle("Settings");
 

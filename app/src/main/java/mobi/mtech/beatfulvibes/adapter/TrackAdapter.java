@@ -19,11 +19,16 @@ import mobi.mtech.beatfulvibes.model.Track;
  */
 
 public class TrackAdapter extends CoreListAdapter<Track> {
-    public TrackAdapter(Context context, RecyclerView recyclerView, List<Track> items) {
-        super(context, recyclerView, items);
-        enableInfiniteScrolling();
-    }
 
+    public TrackAdapter(Context context, RecyclerView recyclerView, List<Track> items) {
+        this(context, recyclerView, items, true);
+    }
+    public TrackAdapter(Context context, RecyclerView recyclerView, List<Track> items, boolean infinateScrolling) {
+        super(context, recyclerView, items);
+        if(infinateScrolling) {
+            enableInfiniteScrolling();
+        }
+    }
     @Override
     public CoreHolder onCreateViewHolder(ViewGroup parent) {
         return new TrackHolder(inflate(parent, R.layout.view_track), getItemClickListener());
