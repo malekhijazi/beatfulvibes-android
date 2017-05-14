@@ -9,7 +9,7 @@
     draggable_view:enable_click_to_maximize_view="true"
     draggable_view:enable_minimized_horizontal_alpha_effect="false"
     draggable_view:top_view_id="@+id/youtube_fragment_container"
-    draggable_view:top_view_margin_bottom="118dp"
+    draggable_view:top_view_margin_bottom="16dp"
     draggable_view:top_view_margin_right="16dp"
     draggable_view:top_view_x_scale_factor="@dimen/x_scale_factor"
     draggable_view:top_view_y_scale_factor="@dimen/y_scale_factor">

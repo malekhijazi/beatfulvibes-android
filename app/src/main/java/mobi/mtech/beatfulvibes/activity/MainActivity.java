@@ -2,6 +2,7 @@ package mobi.mtech.beatfulvibes.activity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -40,6 +41,8 @@ import mobi.mtech.beatfulvibes.fragment.ShuffleFragment;
 public class MainActivity extends CoreTabbedFrameActivity implements View.OnClickListener, CommunicationListener, TabSelectedListener {
     private EditText mSearchEditText;
     private SquareImageButton mSearchBack;
+    private AppBarLayout mAppBarLayout;
+
     private boolean isSearchOpened = false;
     private SearchFragment mSearchFragment = SearchFragment.newInstance();
     private HomeFragment mHomeFragment = HomeFragment.newInstance();
@@ -48,6 +51,9 @@ public class MainActivity extends CoreTabbedFrameActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         changeTitle("Discover");
+
+        mAppBarLayout = (AppBarLayout) findViewById(R.id.app_bar_layout);
+
         setOptionsMenu(getToolbar(), R.menu.main);
         setupSearchBar();
         setTabSelectedListener(this);
@@ -159,6 +165,7 @@ public class MainActivity extends CoreTabbedFrameActivity implements View.OnClic
         mSearchEditText.requestFocus();
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.showSoftInput(mSearchEditText, InputMethodManager.SHOW_IMPLICIT);
+        mAppBarLayout.animate().translationY(-mTabLayout.getHeight()).setDuration(300).start();
     }
 
     private SupportAnimator getAnimator() {
@@ -229,7 +236,7 @@ public class MainActivity extends CoreTabbedFrameActivity implements View.OnClic
         });
         animator.start();//.start();
         isSearchOpened = false;
-
+        mAppBarLayout.animate().translationY(0).setDuration(300).start();
     }
 
 

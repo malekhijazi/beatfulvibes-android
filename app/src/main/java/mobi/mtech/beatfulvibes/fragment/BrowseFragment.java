@@ -190,7 +190,9 @@ public class BrowseFragment extends CoreListFragment<Track> {
                     if (mLastCategorySelected != null) {
                         mLastCategorySelected.setSelected(false);
                     }
-                    view.setSelected(true);
+                    if(view != null) {
+                        view.setSelected(true);
+                    }
                     category_id = mCategoryAdapter.getItem(position).getId();
                     page = 1;
                     if (CategoryAdapter.mSelectedPosition != -1) {

@@ -37,8 +37,10 @@ public class TrackHolder extends CoreHolder<Track> {
     @Override
     public void bindData(Track data) {
         Glide.with(mImage.getContext()).load(data.getThumbnail()).into(mImage);
-        Glide.with(mArtistImage.getContext()).load(data.getArtist().getImage()).into(mArtistImage);
-        mTitle.setText(data.getName());
-        mArtistName.setText(data.getArtist().getName());
+        if(data.getArtist() != null) {
+            Glide.with(mArtistImage.getContext()).load(data.getArtist().getImage()).into(mArtistImage);
+            mTitle.setText(data.getName());
+            mArtistName.setText(data.getArtist().getName());
+        }
     }
 }
