@@ -6,7 +6,7 @@ package mobi.mtech.beatfulvibes.constant;
  */
 
 public class ApiConstant {
-    private static final String BASE_URL = "http://beatfulvibes.com";
+    private static final String BASE_URL = "https://beatfulvibes.com";
     public static final String BASE_API_URL =  BASE_URL + "/api/v1";
 
     public static final String DISCOVER = BASE_API_URL + "/discover";

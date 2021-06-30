@@ -32,6 +32,10 @@ import mobi.mtech.beatfulvibes.model.wrapper.search.SearchWrapper;
 
 public class NetworkManager extends CoreNetworkManager {
 
+    public NetworkManager(Context context) {
+        super(context);
+    }
+
     public static void discover(Context context, JSONObject params, final Listener<DiscoverDataWrapper> listener) {
         String url = ApiConstant.DISCOVER;
         GsonRequest<DiscoverWrapper> request = new GsonRequest<>(Request.Method.GET,

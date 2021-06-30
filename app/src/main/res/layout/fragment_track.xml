@@ -4,24 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    android:clipToPadding="false"
-    draggable_view:bottom_view_id="@+id/list_container"
-    draggable_view:enable_click_to_maximize_view="true"
-    draggable_view:enable_minimized_horizontal_alpha_effect="false"
-    draggable_view:top_view_id="@+id/youtube_fragment_container"
-    draggable_view:top_view_margin_bottom="16dp"
-    draggable_view:top_view_margin_right="16dp"
-    draggable_view:top_view_x_scale_factor="@dimen/x_scale_factor"
-    draggable_view:top_view_y_scale_factor="@dimen/y_scale_factor">
+    android:clipToPadding="false">
 
     <!-- ListView Episodes -->
 
 
     <RelativeLayout
-        android:id="@+id/list_container"
+        android:id="@+id/second_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/youtube_fragment_container"
+        android:layout_below="@+id/drag_view"
         android:background="@color/background">
 
         <RelativeLayout
@@ -43,7 +35,7 @@
 
     <!-- TvShow Fan Art -->
     <RelativeLayout
-        android:id="@+id/youtube_fragment_container"
+        android:id="@+id/drag_view"
         android:layout_width="match_parent"
         android:clipToPadding="false"
         android:layout_height="250dp">

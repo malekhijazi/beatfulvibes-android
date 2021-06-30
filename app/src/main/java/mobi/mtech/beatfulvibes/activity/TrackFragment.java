@@ -84,7 +84,6 @@ public class TrackFragment extends CoreListFragment<Track> implements YouTubePla
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mDraggableView = (DraggableView) view.findViewById(R.id.draggable_view);
-        final RelativeLayout container = (RelativeLayout) view.findViewById(R.id.youtube_fragment_container);
         mDraggableView.setDraggableListener(new DraggableListener() {
             @Override
             public void onMaximized() {
@@ -106,6 +105,16 @@ public class TrackFragment extends CoreListFragment<Track> implements YouTubePla
                 mCommunicationListener.execute(Constant.TYPE_SWIPE, null);
             }
         });
+
+        mDraggableView.setClickToMaximizeEnabled(true);
+        mDraggableView.setHorizontalAlphaEffectEnabled(false);
+        mDraggableView.setTopViewMarginBottom(Utils.dpToPx(16));
+        mDraggableView.setTopViewMarginRight(Utils.dpToPx(16));
+        mDraggableView.setXTopViewScaleFactor(2.3f);
+        mDraggableView.setYTopViewScaleFactor(2.3f);
+
+
+
         getSimilar();
     }
 
